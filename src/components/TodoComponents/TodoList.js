@@ -2,7 +2,6 @@ import React from 'react'
 import Todo from './Todo'
 
 const TodoList = (props) => {
-  // console.log('props', props)
   return (
     <div className='todo-list'>
       {props.list.map((item) => (
@@ -12,7 +11,7 @@ const TodoList = (props) => {
         toggleItem={props.toggleItem} />
       ))}
       <button className='clear-btn' onClick={props.clearCompleted}>
-        Clear Purchased
+        Clear Completed
       </button>
     </div>
   )
