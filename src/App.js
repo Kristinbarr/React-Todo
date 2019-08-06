@@ -1,6 +1,7 @@
 import React from 'react'
 import TodoForm from './components/TodoComponents/TodoForm'
 import TodoList from './components/TodoComponents/TodoList'
+import './components/TodoComponents/Todo.css'
 
 const todoData = [
   {
@@ -44,7 +45,7 @@ class App extends React.Component {
   addItem = (taskName) => {
     const newTask = {
       task: taskName,
-      id: Date.new(),
+      id: Date.now(),
       completed: false
     }
     this.setState({
@@ -53,6 +54,7 @@ class App extends React.Component {
   }
 
   clearCompleted = () => {
+    console.log('before', this.state.list)
     this.setState({
       list: this.state.list.filter((item) => item.completed === false)
     })
